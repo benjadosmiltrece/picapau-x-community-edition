@@ -1,0 +1,72 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Picapau X: Community Edition"
+run/main_scene="res://worlds/main_menu.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=4
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[global]
+
+AudioEffectSpectrumAnalyzer=false
+AnalyzerBus=NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/mainMenu/music")
+
+[input]
+
+up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
+]
+}
+right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
+]
+}
+left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
+]
+}
+escape={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=2
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/lossless_compression/force_png=true
+textures/default_filters/anisotropic_filtering_level=4
+camera/depth_of_field/depth_of_field_use_jitter=true
+anti_aliasing/screen_space_roughness_limiter/enabled=false
+anti_aliasing/screen_space_roughness_limiter/amount=3.85
+anti_aliasing/screen_space_roughness_limiter/limit=1.0
+textures/decals/filter=5
+textures/light_projectors/filter=5
+anti_aliasing/quality/msaa_2d=1
+anti_aliasing/quality/msaa_3d=1
+anti_aliasing/quality/screen_space_aa=1

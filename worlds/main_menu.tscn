@@ -1,0 +1,260 @@
+[gd_scene load_steps=15 format=3 uid="uid://b4ursp1hi072b"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_g0oqy"]
+[ext_resource type="Texture2D" uid="uid://2q8xncfwiwe1" path="res://sprites/picamenu3.png" id="2_72njx"]
+[ext_resource type="Texture2D" uid="uid://dd54x84vt0efv" path="res://sprites/pica.png" id="2_vxoiu"]
+[ext_resource type="Texture2D" uid="uid://brw2iitw6gw3y" path="res://sprites/rain.png" id="5_gv4ye"]
+[ext_resource type="Script" path="res://scripts/rain.gd" id="6_o8qip"]
+[ext_resource type="AudioStream" uid="uid://b3cmta8cuvvsr" path="res://sounds/music/main_menu_music.mp3" id="7_153dn"]
+[ext_resource type="Script" path="res://scripts/titulo.gd" id="8_625qg"]
+[ext_resource type="PackedScene" uid="uid://c2gel10srhdfo" path="res://worlds/options.tscn" id="8_f5h20"]
+[ext_resource type="AudioStream" uid="uid://ej2sywb3u8ek" path="res://sounds/effects/Fnaf Nose honk.mp3" id="8_ntlgw"]
+[ext_resource type="Shader" path="res://materials/vignette_shader.gdshader" id="10_5huv6"]
+
+[sub_resource type="GDScript" id="GDScript_ki73k"]
+script/source = "extends Node
+"
+
+[sub_resource type="Theme" id="Theme_fp0sj"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_awbtm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h1cy8"]
+shader = ExtResource("10_5huv6")
+shader_parameter/smoothness = 0.37
+shader_parameter/scale = 0.1
+shader_parameter/screen_size = Vector2(827.69, 399.05)
+
+[node name="mainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g0oqy")
+
+[node name="windowsResizer" type="Node" parent="."]
+script = SubResource("GDScript_ki73k")
+
+[node name="fondo" type="Sprite2D" parent="."]
+position = Vector2(556.711, 317.962)
+scale = Vector2(0.320406, 0.320406)
+texture = ExtResource("2_72njx")
+
+[node name="Button" type="Button" parent="fondo"]
+offset_left = -1041.53
+offset_top = 15.7238
+offset_right = -991.525
+offset_bottom = 65.7238
+focus_mode = 0
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="titulo" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 932.0
+offset_top = 109.0
+offset_right = 972.0
+offset_bottom = 149.0
+rotation = -0.124603
+
+[node name="titulo" type="Sprite2D" parent="titulo"]
+scale = Vector2(0.162, 0.162)
+texture = ExtResource("2_vxoiu")
+
+[node name="rain" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(528, -3103)
+scale = Vector2(0.772474, 0.772474)
+texture = ExtResource("5_gv4ye")
+script = ExtResource("6_o8qip")
+
+[node name="options2" parent="." instance=ExtResource("8_f5h20")]
+visible = false
+layout_mode = 1
+
+[node name="play" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 342.0
+offset_top = -139.0
+offset_right = 479.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.10472
+scale = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="play"]
+layout_mode = 2
+alignment = 1
+
+[node name="play" type="Button" parent="play/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_fp0sj")
+theme_type_variation = &"jkl"
+theme_override_colors/font_hover_color = Color(0.82133, 0.882929, 0.86534, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.752941, 0.262745, 1)
+theme_override_colors/font_color = Color(0.419884, 0.379078, 0.471218, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 50
+text = "Jugar"
+icon = SubResource("ViewportTexture_awbtm")
+flat = true
+
+[node name="options" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 323.0
+offset_top = -49.0
+offset_right = 560.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0698132
+scale = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="options"]
+layout_mode = 2
+alignment = 1
+
+[node name="options" type="Button" parent="options/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_fp0sj")
+theme_type_variation = &"jkl"
+theme_override_colors/font_hover_color = Color(0.82133, 0.882929, 0.86534, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.752941, 0.262745, 1)
+theme_override_colors/font_color = Color(0.419884, 0.379078, 0.471218, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 50
+text = "Opciones"
+icon = SubResource("ViewportTexture_awbtm")
+flat = true
+
+[node name="credits" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 334.0
+offset_top = 38.0
+offset_right = 537.0
+offset_bottom = 115.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="credits"]
+layout_mode = 2
+alignment = 1
+
+[node name="asd" type="Button" parent="credits/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_fp0sj")
+theme_type_variation = &"jkl"
+theme_override_colors/font_hover_color = Color(0.82133, 0.882929, 0.86534, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.752941, 0.262745, 1)
+theme_override_colors/font_color = Color(0.419884, 0.379078, 0.471218, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 50
+text = "Creditos"
+flat = true
+
+[node name="salir" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 349.0
+offset_top = 133.0
+offset_right = 467.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0872665
+scale = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="salir"]
+layout_mode = 2
+alignment = 1
+
+[node name="exit" type="Button" parent="salir/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_fp0sj")
+theme_type_variation = &"jkl"
+theme_override_colors/font_hover_color = Color(1, 0.415712, 0.475967, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.752941, 0.262745, 1)
+theme_override_colors/font_color = Color(0.419608, 0.380392, 0.470588, 1)
+theme_override_constants/outline_size = 7
+theme_override_font_sizes/font_size = 50
+text = "Salir"
+icon = SubResource("ViewportTexture_awbtm")
+flat = true
+
+[node name="boop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_ntlgw")
+volume_db = 10.0
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("7_153dn")
+volume_db = 10.0
+autoplay = true
+attenuation = 0.0
+bus = &"AnalyzerBus"
+parameters/looping = true
+
+[node name="info" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 69.0
+grow_vertical = 0
+text = " 0.2.2"
+scroll_active = false
+tab_size = 6
+
+[node name="vignette" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_h1cy8")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("8_625qg")
+
+[connection signal="pressed" from="fondo/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="play/VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="options/VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="credits/VBoxContainer/asd" to="." method="_on_asd_pressed"]
+[connection signal="pressed" from="salir/VBoxContainer/exit" to="." method="_on_exit_pressed"]

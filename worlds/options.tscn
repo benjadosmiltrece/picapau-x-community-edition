@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2gel10srhdfo"]
+
+[ext_resource type="Script" path="res://scripts/options.gd" id="1_faotk"]
+[ext_resource type="Script" path="res://scripts/volume.gd" id="2_qqavv"]
+
+[node name="options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_faotk")
+
+[node name="sliders" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -21.5
+offset_right = 137.5
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="sliders"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.745098)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="sliders"]
+layout_direction = 1
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="sliders/VBoxContainer"]
+layout_mode = 2
+text = "donest work"
+fit_content = true
+
+[node name="volume" type="HSlider" parent="sliders/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+min_value = -100.0
+max_value = 0.0
+rounded = true
+script = ExtResource("2_qqavv")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+offset_right = 69.0
+offset_bottom = 31.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="back" type="Button" parent="MarginContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "← Back"
+
+[connection signal="ready" from="sliders/VBoxContainer/RichTextLabel" to="." method="_on_rich_text_label_ready"]
+[connection signal="changed" from="sliders/VBoxContainer/volume" to="." method="_on_volume_changed"]
+[connection signal="ready" from="sliders/VBoxContainer/volume" to="." method="_on_volume_ready"]
+[connection signal="value_changed" from="sliders/VBoxContainer/volume" to="." method="_on_volume_value_changed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer2/back" to="." method="_on_back_pressed"]
