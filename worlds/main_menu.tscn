@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b4ursp1hi072b"]
+[gd_scene load_steps=16 format=3 uid="uid://b4ursp1hi072b"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_g0oqy"]
 [ext_resource type="Texture2D" uid="uid://2q8xncfwiwe1" path="res://sprites/picamenu3.png" id="2_72njx"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://brw2iitw6gw3y" path="res://sprites/rain.png" id="5_gv4ye"]
 [ext_resource type="Script" path="res://scripts/rain.gd" id="6_o8qip"]
 [ext_resource type="AudioStream" uid="uid://b3cmta8cuvvsr" path="res://sounds/music/main_menu_music.mp3" id="7_153dn"]
+[ext_resource type="PackedScene" uid="uid://dw50nrasscj2r" path="res://worlds/creditos.tscn" id="7_lf8fy"]
 [ext_resource type="Script" path="res://scripts/titulo.gd" id="8_625qg"]
 [ext_resource type="PackedScene" uid="uid://c2gel10srhdfo" path="res://worlds/options.tscn" id="8_f5h20"]
 [ext_resource type="AudioStream" uid="uid://ej2sywb3u8ek" path="res://sounds/effects/Fnaf Nose honk.mp3" id="8_ntlgw"]
@@ -71,6 +72,10 @@ texture = ExtResource("5_gv4ye")
 script = ExtResource("6_o8qip")
 
 [node name="options2" parent="." instance=ExtResource("8_f5h20")]
+visible = false
+layout_mode = 1
+
+[node name="creditos" parent="." instance=ExtResource("7_lf8fy")]
 visible = false
 layout_mode = 1
 
