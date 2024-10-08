@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b4ursp1hi072b"]
+[gd_scene load_steps=17 format=3 uid="uid://b4ursp1hi072b"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_g0oqy"]
 [ext_resource type="Texture2D" uid="uid://2q8xncfwiwe1" path="res://sprites/picamenu3.png" id="2_72njx"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c2gel10srhdfo" path="res://worlds/options.tscn" id="8_f5h20"]
 [ext_resource type="AudioStream" uid="uid://ej2sywb3u8ek" path="res://sounds/effects/Fnaf Nose honk.mp3" id="8_ntlgw"]
 [ext_resource type="Shader" path="res://materials/vignette_shader.gdshader" id="10_5huv6"]
+[ext_resource type="PackedScene" uid="uid://di7ipvj1sym1y" path="res://worlds/loading.tscn" id="12_c0qwc"]
 
 [sub_resource type="GDScript" id="GDScript_ki73k"]
 script/source = "extends Node
@@ -242,7 +243,7 @@ anchor_bottom = 1.0
 offset_top = -23.0
 offset_right = 69.0
 grow_vertical = 0
-text = " 0.2.2"
+text = " 0.2.3"
 scroll_active = false
 tab_size = 6
 
@@ -257,6 +258,10 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("8_625qg")
+
+[node name="loading" parent="." instance=ExtResource("12_c0qwc")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="fondo/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="play/VBoxContainer/play" to="." method="_on_play_pressed"]

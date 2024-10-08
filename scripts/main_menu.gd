@@ -2,11 +2,10 @@ extends Control
 @onready var options_2: Control = $options2
 @onready var creditos: Control = $creditos
 @onready var boop: AudioStreamPlayer2D = $boop
-
-var array = ["res://worlds/test01/test_01.tscn"]
+@onready var vignette: ColorRect = $vignette
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file(array.pick_random())
+	vignette.transition = true
 #---------------------------------------------------------------------------------------------------
 func _on_options_pressed() -> void:
 		options_2.visible = not options_2.visible

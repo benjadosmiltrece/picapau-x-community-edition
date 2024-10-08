@@ -1,4 +1,7 @@
 extends ColorRect
+
+var transition = false
+var progress = 0.0  # Starting at 0
 var bus_name = "AnalyzerBus"
 var effect_index = 0
 var min_db = -60  # Minimum volume in dB (very quiet)
@@ -11,7 +14,7 @@ var max_scale = 0.55  # Maximum scale limit
 func _ready() -> void:
 	shader_material.set("shader_param/screen_size", Vector2(get_viewport().size.x, get_viewport().size.y))
 
-func _process(_delta):
+func _process(delta):
 	var bus_index = AudioServer.get_bus_index(bus_name)
 	var analyzer = AudioServer.get_bus_effect_instance(bus_index, effect_index)
 	
@@ -28,4 +31,15 @@ func _process(_delta):
 			# Adjust scale factor based on normalized_db, but control the scaling rate
 			var target_scale = lerp(min_scale, max_scale, pow(normalized_db, 2))  # Calculate target scale
 			scale_factor = lerp(scale_factor, target_scale, scale_increment)  # Smoothly interpolate to target scale
-			material.set("shader_parameter/scale",scale_factor / 3);
+			if transition:
+				if progress < 1.0:
+					progress += 0.5 * delta
+					material.set("shader_parameter/scale", lerp(scale_factor / 3, 1.0, progress));
+					material.set("shader_parameter/smoothness", lerp(0.37 / 3, 1.0, progress));
+			else:
+				material.set("shader_parameter/scale",scale_factor / 3);
+	
+	if material.get("shader_parameter/smoothness") > 0.7:
+		$"../loading".visible = true
+	if material.get("shader_parameter/smoothness") >= 1:
+		get_tree().change_scene_to_file("res://worlds/slotMachine.tscn")
