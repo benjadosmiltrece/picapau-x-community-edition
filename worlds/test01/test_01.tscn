@@ -1,11 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cro53sqbaaaox"]
+[gd_scene load_steps=9 format=3 uid="uid://cro53sqbaaaox"]
 
 [ext_resource type="PackedScene" uid="uid://cxvnpbtl0ey7s" path="res://prefabs/player.tscn" id="1_t1i1m"]
 [ext_resource type="PackedScene" uid="uid://cemabauhxht3i" path="res://worlds/pause_menu.tscn" id="2_0h7rk"]
+[ext_resource type="Texture2D" uid="uid://bba1bn1agwrp1" path="res://sprites/Untitled.png" id="3_x16wl"]
+[ext_resource type="ArrayMesh" uid="uid://b3tno5xw3ewvf" path="res://fbx/galleta.obj" id="4_2y2na"]
+[ext_resource type="Script" path="res://scripts/galleta.gd" id="5_isp52"]
 
 [sub_resource type="Environment" id="Environment_pnywi"]
 
 [sub_resource type="Environment" id="Environment_flxjn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qr15g"]
+albedo_texture = ExtResource("3_x16wl")
 
 [node name="test01" type="Node3D"]
 
@@ -20,6 +26,7 @@ use_collision = true
 size = Vector3(16.2789, 1, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_t1i1m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.98027, 1.14141, -3.52382)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 8.61985, 9.83683)
@@ -34,3 +41,60 @@ follow_viewport_enabled = true
 
 [node name="pause_menu" parent="CanvasLayer" instance=ExtResource("2_0h7rk")]
 metadata/_edit_use_anchors_ = true
+
+[node name="Galletas" type="Node3D" parent="."]
+
+[node name="Galleta" type="MeshInstance3D" parent="Galletas"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -4.07678, 1, 0.249416)
+material_override = SubResource("StandardMaterial3D_qr15g")
+mesh = ExtResource("4_2y2na")
+skeleton = NodePath("../..")
+script = ExtResource("5_isp52")
+
+[node name="Galleta7" type="MeshInstance3D" parent="Galletas"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 3.11942, 1, 2.37659)
+material_override = SubResource("StandardMaterial3D_qr15g")
+mesh = ExtResource("4_2y2na")
+skeleton = NodePath("../..")
+
+[node name="Galleta3" type="MeshInstance3D" parent="Galletas"]
+transform = Transform3D(2.48389e-15, 5.68248e-08, -1.3, 1.3, -5.68248e-08, 0, -5.68248e-08, -1.3, -5.68248e-08, -2.31167, 1, 2.01452)
+material_override = SubResource("StandardMaterial3D_qr15g")
+mesh = ExtResource("4_2y2na")
+skeleton = NodePath("../..")
+
+[node name="Galleta8" type="MeshInstance3D" parent="Galletas"]
+transform = Transform3D(2.48389e-15, 5.68248e-08, -1.3, 1.3, -5.68248e-08, 0, -5.68248e-08, -1.3, -5.68248e-08, 4.79401, 1, 0.973563)
+material_override = SubResource("StandardMaterial3D_qr15g")
+mesh = ExtResource("4_2y2na")
+skeleton = NodePath("../..")
+
+[node name="Galleta4" type="MeshInstance3D" parent="Galletas"]
+transform = Transform3D(2.29282e-15, 5.24537e-08, -1.2, 1.2, -5.24537e-08, 0, -5.24537e-08, -1.2, -5.24537e-08, -0.320269, 1, -4.45753)
+material_override = SubResource("StandardMaterial3D_qr15g")
+mesh = ExtResource("4_2y2na")
+skeleton = NodePath("../..")
+
+[node name="Galleta9" type="MeshInstance3D" parent="Galletas"]
+transform = Transform3D(2.29282e-15, 5.24537e-08, -1.2, 1.2, -5.24537e-08, 0, -5.24537e-08, -1.2, -5.24537e-08, 6.51386, 1, -0.384212)
+material_override = SubResource("StandardMaterial3D_qr15g")
+mesh = ExtResource("4_2y2na")
+skeleton = NodePath("../..")
+
+[node name="Galleta6" type="MeshInstance3D" parent="Galletas"]
+transform = Transform3D(2.29282e-15, 5.24537e-08, -1.2, 1.2, -5.24537e-08, 0, -5.24537e-08, -1.2, -5.24537e-08, 0.539655, 1, 3.28178)
+material_override = SubResource("StandardMaterial3D_qr15g")
+mesh = ExtResource("4_2y2na")
+skeleton = NodePath("../..")
+
+[node name="Galleta2" type="MeshInstance3D" parent="Galletas"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -2.26641, 1, -5.90582)
+material_override = SubResource("StandardMaterial3D_qr15g")
+mesh = ExtResource("4_2y2na")
+skeleton = NodePath("../..")
+
+[node name="Galleta5" type="MeshInstance3D" parent="Galletas"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 1.35432, 1, -2.73769)
+material_override = SubResource("StandardMaterial3D_qr15g")
+mesh = ExtResource("4_2y2na")
+skeleton = NodePath("../..")

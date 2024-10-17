@@ -3,9 +3,14 @@ extends Control
 @onready var creditos: Control = $creditos
 @onready var boop: AudioStreamPlayer2D = $boop
 @onready var vignette: ColorRect = $vignette
+@onready var music: AudioStreamPlayer2D = $music
+
+func _ready() -> void:
+	music.play()
 
 func _on_play_pressed() -> void:
 	vignette.transition = true
+	music.stop()
 #---------------------------------------------------------------------------------------------------
 func _on_options_pressed() -> void:
 		options_2.visible = not options_2.visible
