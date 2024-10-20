@@ -1,5 +1,5 @@
 extends MeshInstance3D
-
+# test
 var toggle = true
 var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
