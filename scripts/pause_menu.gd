@@ -1,5 +1,5 @@
 extends Control
-
+@onready var playButton: Button = $play/VBoxContainer/play
 func _ready() -> void:
 	$AnimationPlayer.play("RESET")
 
@@ -22,6 +22,7 @@ func _on_resume_button_pressed():
 
 func _on_main_menu_button_pressed() -> void:
 	get_tree().paused = false
+	playButton.set("disabled", true)
 	get_tree().change_scene_to_file("res://worlds/main_menu.tscn")
 
 func _process(_delta: float) -> void:

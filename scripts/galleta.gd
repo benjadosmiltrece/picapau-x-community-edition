@@ -11,10 +11,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 
 	if toggle:
-		position.y += rng.randf_range(0.0, 0.02) + delta / position.y / 2
-		if position.y >= 1.5:
+		position.y += rng.randf_range(0.0, 0.1) * delta
+		if position.y >= 1.1:
 			toggle = false
 	if toggle == false:
-		position.y -= rng.randf_range(0.0, 0.02) + delta / position.y / 2
-		if position.y <= 0.5:
+		position.y -= rng.randf_range(0.0, 0.1) * delta
+		if position.y <= 0.9:
 			toggle = true
