@@ -2,26 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1vbyv848rna"
-path="res://.godot/imported/frame0010.png-b3ad1fce3ccd2f230ff4dd3ea99a3877.ctex"
+uid="uid://bnhtahw6g1rqb"
+path="res://.godot/imported/frame_04_delay-0.1s.png-8f70a29d7cf67ef5f6e7234c1f946dc7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/slot_machine/frame0010.png"
-dest_files=["res://.godot/imported/frame0010.png-b3ad1fce3ccd2f230ff4dd3ea99a3877.ctex"]
+source_file="res://sprites/emoji gif/frame_04_delay-0.1s.png"
+dest_files=["res://.godot/imported/frame_04_delay-0.1s.png-8f70a29d7cf67ef5f6e7234c1f946dc7.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

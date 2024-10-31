@@ -5,13 +5,15 @@ extends Control
 @onready var vignette: ColorRect = $vignette
 @onready var music: AudioStreamPlayer2D = $music
 @onready var playButton: Button = $play/VBoxContainer/play
+@onready var animated_sprite_2d: AnimatedSprite2D = $loading/MarginContainer/AnimatedSprite2D
 
 func _ready() -> void:
 	music.play()
-	playButton.set("disabled", true)
+	
 func _on_play_pressed() -> void:
+	playButton.set("disabled", true)
 	vignette.transition = true
-	music.stop()
+	animated_sprite_2d.fade_in = true
 	
 #---------------------------------------------------------------------------------------------------
 func _on_options_pressed() -> void:

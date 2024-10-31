@@ -2,6 +2,7 @@ extends ColorRect
 
 var transition = false
 var progress = 0.0  # Starting at 0
+var progress2 = 0.5
 var bus_name = "AnalyzerBus"
 var effect_index = 0
 var min_db = -60  # Minimum volume in dB (very quiet)
@@ -11,6 +12,7 @@ var scale_increment = 0.175  # How much to increment the scale per frame
 var min_scale = 0.2 # Minimum scale limit
 var max_scale = 0.55  # Maximum scale limit
 @onready var shader_material = $".".material
+@onready var music: AudioStreamPlayer2D = $"../music"
 func _ready() -> void:
 	shader_material.set("shader_param/screen_size", Vector2(get_viewport().size.x, get_viewport().size.y))
 
@@ -33,13 +35,15 @@ func _process(delta):
 			scale_factor = lerp(scale_factor, target_scale, scale_increment)  # Smoothly interpolate to target scale
 			if transition:
 				if progress < 1.0:
-					progress += 0.5 * delta
-					material.set("shader_parameter/scale", lerp(scale_factor / 3, 1.0, progress));
-					material.set("shader_parameter/smoothness", lerp(0.37 / 3, 1.0, progress));
+					progress2 += 0.001
+					progress += progress2 * delta
+					material.set("shader_parameter/scale", lerp(scale_factor / 3, 1.0, progress / 2));
+					material.set("shader_parameter/smoothness", lerp(scale_factor / 3, 1.0, progress));
 			else:
 				material.set("shader_parameter/scale",scale_factor / 3);
 	
-	if material.get("shader_parameter/smoothness") > 0.7:
+	if material.get("shader_parameter/smoothness") > 0.5:
 		$"../loading".visible = true
+		music.stop()
 	if material.get("shader_parameter/smoothness") >= 1:
 		get_tree().change_scene_to_file("res://worlds/slotMachine.tscn")

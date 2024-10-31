@@ -1,4 +1,115 @@
-[gd_scene format=3 uid="uid://di7ipvj1sym1y"]
+[gd_scene load_steps=22 format=3 uid="uid://di7ipvj1sym1y"]
+
+[ext_resource type="Texture2D" uid="uid://osvlc1gfi71d" path="res://sprites/emoji gif/frame_00_delay-0.1s.png" id="1_p51gh"]
+[ext_resource type="Texture2D" uid="uid://btn4f5ffdl65t" path="res://sprites/emoji gif/frame_01_delay-0.1s.png" id="2_t8f5t"]
+[ext_resource type="Texture2D" uid="uid://lf3c7x7xw43w" path="res://sprites/emoji gif/frame_02_delay-0.1s.png" id="3_0spk4"]
+[ext_resource type="Texture2D" uid="uid://drufx8missdqd" path="res://sprites/emoji gif/frame_03_delay-0.1s.png" id="4_oyr1g"]
+[ext_resource type="Texture2D" uid="uid://bnhtahw6g1rqb" path="res://sprites/emoji gif/frame_04_delay-0.1s.png" id="5_nw2ob"]
+[ext_resource type="Texture2D" uid="uid://dd1cdgtthrw7e" path="res://sprites/emoji gif/frame_05_delay-0.1s.png" id="6_cxc7v"]
+[ext_resource type="Texture2D" uid="uid://cr1tjdjbcngqb" path="res://sprites/emoji gif/frame_06_delay-0.1s.png" id="7_e3m6o"]
+[ext_resource type="Texture2D" uid="uid://c0ulxay8d88y" path="res://sprites/emoji gif/frame_07_delay-0.1s.png" id="8_6wjbw"]
+[ext_resource type="Texture2D" uid="uid://vuehn0fmcbd6" path="res://sprites/emoji gif/frame_08_delay-0.1s.png" id="9_rexmr"]
+[ext_resource type="Texture2D" uid="uid://o2x3uv03kf6n" path="res://sprites/emoji gif/frame_09_delay-0.1s.png" id="10_30d5o"]
+[ext_resource type="Texture2D" uid="uid://mj04ydqxubfj" path="res://sprites/emoji gif/frame_10_delay-0.1s.png" id="11_fb23l"]
+[ext_resource type="Texture2D" uid="uid://cr4omu3wiunsq" path="res://sprites/emoji gif/frame_11_delay-0.1s.png" id="12_26bnk"]
+[ext_resource type="Texture2D" uid="uid://cr53oe51egvbu" path="res://sprites/emoji gif/frame_12_delay-0.1s.png" id="13_5ke7u"]
+[ext_resource type="Texture2D" uid="uid://cvfllirx05t1p" path="res://sprites/emoji gif/frame_13_delay-0.1s.png" id="14_eex51"]
+[ext_resource type="Texture2D" uid="uid://bowv4r2ohhgba" path="res://sprites/emoji gif/frame_14_delay-0.1s.png" id="15_scgyy"]
+[ext_resource type="Texture2D" uid="uid://vg0qyxdy1jqe" path="res://sprites/emoji gif/frame_15_delay-0.1s.png" id="16_cwdt6"]
+[ext_resource type="Script" path="res://scripts/animated_sprite_2d.gd" id="17_y16v6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c0j6m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_p51gh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_t8f5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0spk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_oyr1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nw2ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cxc7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_e3m6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6wjbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rexmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_30d5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fb23l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_26bnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5ke7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_eex51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_scgyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_cwdt6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="Animation" id="Animation_8t15g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_q7vv8"]
+resource_name = "fade_in"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.7, 1.83333, 3.13333, 4.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ii2qi"]
+_data = {
+"RESET": SubResource("Animation_8t15g"),
+"fade_in": SubResource("Animation_q7vv8")
+}
 
 [node name="Control" type="Control"]
 process_mode = 3
@@ -33,3 +144,27 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "loading..."
 scroll_active = false
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-70, 3)
+scale = Vector2(0.385, 0.385)
+sprite_frames = SubResource("SpriteFrames_c0j6m")
+script = ExtResource("17_y16v6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ii2qi")
+}
