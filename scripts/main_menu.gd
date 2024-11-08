@@ -8,6 +8,8 @@ extends Control
 @onready var animated_sprite_2d: AnimatedSprite2D = $loading/MarginContainer/AnimatedSprite2D
 
 func _ready() -> void:
+	animated_sprite_2d.fade_in = false
+	playButton.set("disabled", false)
 	music.play()
 	
 func _on_play_pressed() -> void:

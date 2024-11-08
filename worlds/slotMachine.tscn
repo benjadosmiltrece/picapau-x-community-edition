@@ -101,6 +101,7 @@ shader_parameter/scale = 0.1
 shader_parameter/screen_size = Vector2(827.69, 399.05)
 
 [node name="Control" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -141,3 +142,5 @@ position = Vector2(528, -3103)
 scale = Vector2(0.772474, 0.772474)
 texture = ExtResource("21_clfqo")
 script = ExtResource("22_00h07")
+
+[connection signal="animation_finished" from="MarginContainer/slotmachine" to="MarginContainer/slotmachine" method="_on_animation_finished"]

@@ -1,5 +1,6 @@
 extends ColorRect
 
+@onready var vignette: ColorRect = $"."
 var transition = false
 var progress = 0.0  # Starting at 0
 var progress2 = 0.5
@@ -47,3 +48,4 @@ func _process(delta):
 		music.stop()
 	if material.get("shader_parameter/smoothness") >= 1:
 		get_tree().change_scene_to_file("res://worlds/slotMachine.tscn")
+		vignette.transition = false
