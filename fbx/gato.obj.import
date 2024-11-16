@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b04q85yigxj3"
+path="res://.godot/imported/gato.obj-7a3fc6958c9dc1a8530c7faa182dfbff.mesh"
+
+[deps]
+
+files=["res://.godot/imported/gato.obj-7a3fc6958c9dc1a8530c7faa182dfbff.mesh"]
+
+source_file="res://fbx/gato.obj"
+dest_files=["res://.godot/imported/gato.obj-7a3fc6958c9dc1a8530c7faa182dfbff.mesh", "res://.godot/imported/gato.obj-7a3fc6958c9dc1a8530c7faa182dfbff.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
